@@ -1,0 +1,48 @@
+
+/*判断移动端是否初始化*/
+/*function isLogin(flag){
+	if (isNull(flag)) flag=false;
+	var logid=getCookies("traffic","logid");
+	var f=(!isNull(logid));
+	if (flag){
+		var uid=getCookies("traffic","uid");
+		f=(f && (!isNull(uid)));
+	}
+	return f;
+}*/
+
+function pushHistory(){
+	var state={ 
+		title:"西湖大学智能交通平台", 
+        url:"#"
+	}; 
+    window.history.pushState(state,"西湖大学智能交通平台","#"); 
+}
+
+/*滚动加载更多*/
+var $pageNum=1,$pageSize=5;
+var $loading=false,$loaded=false;
+
+function loadShowMore($dg,total){
+	number=$dg.find(".weui-cell").length;
+	if (number==0){
+		$loaded=true;
+		$dg.find(".weui-cells__empty").show();
+		$dg.find(".weui-loadmore").hide();
+	}else if (number>=total){
+		$loaded=true;
+		$dg.find(".weui-loadmore").addClass("weui-loadmore_line").show();
+		$dg.find(".weui-loadmore__tips").text("无更多数据");
+		$dg.find(".weui-loading").hide();
+	}else{
+		$loaded=false;
+		$dg.find(".weui-loadmore").show();
+	}
+}
+
+function loadShowLoading($dg){
+	$dg.find(".weui-cells__empty").hide();
+	$dg.find(".weui-loadmore").removeClass("weui-loadmore_line").show();
+	$dg.find(".weui-loadmore__tips").text("正在加载");
+	$dg.find(".weui-loading").show();
+}

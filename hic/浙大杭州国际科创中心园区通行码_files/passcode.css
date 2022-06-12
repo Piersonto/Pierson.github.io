@@ -1,0 +1,276 @@
+
+.backpanel {
+	background: #004ea2;
+	position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 224px;
+}
+.panel {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 1px 8px #eee;
+	position: relative;
+}
+.large-date {
+    color: #373f4a;
+    text-align: center;
+    font-size: 40px;
+	line-height:50px;
+    font-weight: 600;
+}
+.large-time {
+    color: #373f4a;
+    text-align: center;
+    font-size: 48px;
+	line-height:58px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+}
+.sui-cell {
+    display: flex;
+    margin-top: 8px;
+	
+}
+.sui-cell_bd {
+    flex: 1;
+	font-size:18px;
+	font-weight:600;
+}
+.sui-cell_item{
+	font-size:12px;
+	color:#333;
+	font-weight:normal;
+}
+.sui-cell_tip{
+	font-size:13px;
+	color:#909090;
+	font-weight:normal;
+}
+.sui-cell_ft {
+	
+}
+.text-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin: 16px;
+}
+.text-name {
+    float: left;
+}
+.text-btn {
+    color: #3b98ff;
+    margin: 0 8px;
+}
+.text-large {
+    color: #414141;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 16px;
+}
+.text-desc{
+    color:#909090;
+    font-size:14px;
+}
+.text-yimiao {
+    color: #d19638;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.panel-code {
+    text-align: center;
+    padding: 10px;
+    font-size: 0;
+}
+canvas{
+	border: 4px solid #122A6A;
+	width:170px;
+	height:170px;
+	padding:5px;
+}
+.sui-badge {
+    background: #122A6A;
+    color: #fff;
+    border-radius: 2px;
+    padding: 2px 4px;
+    font-size: 16px;
+    float: right;
+}
+.daka {
+    position: absolute;
+    right: 28px;
+    top: 240px;
+    width: 64px;
+    height: 64px;
+    z-index: 10;
+   	display:none;
+}
+.panel-hesuan {
+    border-radius: 8px;
+}
+.panel-hesuan-title {
+    text-align: center;
+    font-size: 14px;
+    background: #49aa65;
+    color: #fff;
+    padding: 6px;
+    border-radius: 8px 8px 0 0;
+}
+.panel-hesuan-body {
+    padding: 16px;
+}
+.text-hesuan-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(to bottom, rgb(73 170 101 / 0.65), #49aa65);
+    width: 80px;
+   	height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+}
+.text-hesuan-time {
+    font-size: 16px;
+    color: #49aa65;
+    text-align:center;
+}
+.text-hesuan-button {
+    padding: 6px 6px 6px 10px;
+    border-radius: 16px;
+    border: 1px solid #122A6A;
+    display: inline-block;
+    font-size: 14px;
+    background: #122A6A;
+    color: #ffffff;
+	margin-top:20px;
+}
+.text-hesuan-button.text-hesuan-button_disable{
+	background-color: #7180A6;
+}
+.weui-btn{
+    border-radius:16px;
+}
+.icon-arrow{
+    width:64px;
+}
+.exptime {
+    margin: 0 auto;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    color: #999;
+}
+.text-hs{
+	text-align:center;
+	align-items:center;
+	display:flex;
+	justify-content:center;
+}
+.hs-btn{
+	border: 0px;
+	width: 120px;
+	border-radius: 5px;
+	margin:5px 15px;
+	color: white;
+	font-size:14px;
+	padding:2px 0px;
+}
+.hs-btn-green{
+	background: #6eacf5;
+}
+.hs-btn-gray{
+	background: #837c7a;
+}
+.hs-btn-red{
+	background: #e8453b;
+}
+/*疫苗接种记录页*/
+.ymjl-top {
+    width: 100%;
+    padding: 16px 20px;
+    background: #004ea2;
+    color: #FFF;
+    box-sizing: border-box;
+}
+.ymjl-top-name {
+    font-size: 16px;
+    line-height: 30px;
+}
+.ymjl-top-code {
+    font-size: 16px;
+    line-height: 30px;
+}
+.ymjl-con {
+    width: 100%;
+    padding: 20px 5%;
+    box-sizing: border-box;
+    margin-top: -5px;
+    border-radius: 10px;
+    background: #f3f3f3;
+}
+.ymjl-list-row {
+    width: 100%;
+    padding: 20px 5%;
+    box-sizing: border-box;
+    border-radius: 10px;
+   	background: #FFF;
+    margin: 10px 0;
+    color: #333;
+    float: left;
+}
+.ymjl-list-top {
+    width: 100%;
+    float: left;
+}
+.ymjl-list-bottom {
+    width: 100%;
+    float: left;
+    border-left: 2px solid #3a8bb8;
+    box-sizing: border-box;
+    padding: 5px 0 5px 20px;
+    margin: 5px 0 5px 10px;
+}
+.ymjl-list-time {
+    color: #000;
+    padding-left: 30px;
+    margin-right: 10px;
+    float: left;
+    line-height: 30px;
+    background: url(/mobile/images/time.png) 0 50% no-repeat;
+    background-size: 22px;
+}
+.ymjl-list-num {
+    letter-spacing: 3px;
+    float: left;
+    line-height: 30px;
+}
+.ymjl-list-zt {
+    float: right;
+    color: #01d2ab;
+    line-height: 30px;
+}
+
+.ymjl-list-info {
+    line-height: 30px;
+    color: #666;
+}
+.ymjl-con-title {
+    font-size: 16px;
+    padding-left: 30px;
+    background: url(/mobile/images/jl.png) 0 50% no-repeat;
+    line-height: 36px;
+    background-size: 26px;
+    font-weight: bold;
+}
+.buttom-div{
+    margin: 20px;
+    font-size: 0.8rem;
+}

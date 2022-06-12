@@ -1,0 +1,22 @@
+
+/*获取数据*/
+function getDataList(s,v){
+	var data=[];
+	if (isNull(v)) v={};
+	var filter={url:s,request:v};
+	AjaxPostAPI(filter,"/getdata.ashx",function(r){
+		if (r.code!=0) $.extend(r,{data:{total:0,rows:[]}});
+		data=r.data;
+	},false);
+	return data;
+}
+/*数据字典*/
+function getidlist(s){
+	var data=[];
+	var filter={url:"/api/sys/getIDlist",request:{idtype:s,idstate:1}};
+	AjaxPostAPI(filter,"/getdata.ashx",function(r){
+		if (r.code!=0) $.extend(r,{data:{total:0,rows:[]}});
+		data=r.data.rows;
+	},false);
+	return data;
+}
