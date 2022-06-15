@@ -20,7 +20,7 @@
 <script type="text/javascript" src="./浙大杭州国际科创中心园区通行码_files/crypto-js.js.下载"></script>
 <script type="text/javascript" src="./浙大杭州国际科创中心园区通行码_files/pubparam.js.下载"></script>
 <script type="text/javascript" src="./浙大杭州国际科创中心园区通行码_files/zjumobile.js.下载"></script>
-<script type="text/javascript" src="./浙大杭州国际科创中心园区通行码_files/jquery.qrcode.min.js.下载"></script>
+<script type="text/javascript" src="./浙大杭州国际科创中心园区通行码_files/jquery.qrcode.min.js"></script>
 <style type="text/css">/* Copyright 2014-present Evernote Corporation. All rights reserved. */
 @keyframes caretBlink {
     from { opacity: 1.0; }
@@ -213,7 +213,7 @@
             </div>
         </div>
         <div class="panel-code">
-            <div id="output"><canvas width="160" height="160"></canvas></div>
+			<div id="output"><canvas width="160" height="160"></canvas></div>
         </div>
 		<div class="exptime">有效期：2022年05月24日 - 2022年06月24日</div>
         <div class="text-yimiao">已完成新冠疫苗加强接种</div>
@@ -271,26 +271,16 @@
 	
 $(function(){
 	showTime();
-	$("#output").qrcode({
+	jQuery("#output").qrcode({
        		width:160,
         	height:160,
         	text:$jT6tmuodGqIOaNssdMY4PSbuE97bVSfa0vsVlTe0HReZk5W3Nmo1ciEbQJducHI6sgFAVqguKXkh0qVKUiecSz8EjwcM3IPs,
         	render:"canvas", //也可以替换为table
         	foreground:#122A6A,
         	background:"#FFF"
-    });
-	/*
-	if (isNull($logininfo)) return;
-	$(".main").fadeIn(500);
-	
-	$backurl=null;
-	if ($logininfo.logid==3)
-		$("#xcm-btn").hide();
-	else
-		$("#launch-btn").hide();
-	getcode();
-	*/
+    	});
 });
+
 /*
 function getcode(){
 	var filter={url:"/api/passcode/getPassCode",request:{mobile:$logininfo.uid}};
