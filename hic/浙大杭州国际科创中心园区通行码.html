@@ -213,7 +213,7 @@
             </div>
         </div>
         <div class="panel-code">
-			<div id="output"><canvas width="160" height="160"></canvas></div>
+			<div><img src="./浙大杭州国际科创中心园区通行码_files/down.png" width="160" height="160"></div>
         </div>
 		<div class="exptime">有效期：2022年05月24日 - 2022年06月24日</div>
         <div class="text-yimiao">已完成新冠疫苗加强接种</div>
@@ -271,96 +271,9 @@
 	
 $(function(){
 	showTime();
-	jQuery("#output").qrcode({
-       		width:160,
-        	height:160,
-        	text:$jT6tmuodGqIOaNssdMY4PSbuE97bVSfa0vsVlTe0HReZk5W3Nmo1ciEbQJducHI6sgFAVqguKXkh0qVKUiecSz8EjwcM3IPs,
-        	render:"canvas", //也可以替换为table
-        	foreground:#122A6A,
-        	background:"#FFF"
-    	});
 });
 
-/*
-function getcode(){
-	var filter={url:"/api/passcode/getPassCode",request:{mobile:$logininfo.uid}};
-	AjaxPostAPI(filter,"/getdata.ashx",function(r){
-		$("#output").text("");
-		$(".hs-btn-red").removeClass("hs-btn-red");
-		$(".hs-btn-green").removeClass("hs-btn-green");
-		$(".hs-btn-gray").removeClass("hs-btn-gray");
-		if (r.code!=0) {
-			window.location.href="/mobile/showmsg.html?errmsg="+r.msg;
-			return;
-		}
-		$sinfo=r.data;
-		$(".text-name").text(getMask($sinfo.name)+"的通行码");
-		var st=$sinfo.starttime;
-		var et=$sinfo.endtime;
-		$(".exptime").text("有效期："+st.substr(0,4)+"年"+st.substr(5,2)+"月"
-			+st.substr(8,2)+"日 - "+et.substr(0,4)+"年"+et.substr(5,2)+"月"
-			+et.substr(8,2)+"日");
-		if ($sinfo.vaccno==-1 || $sinfo.vaccno==0)
-			var ym="未接种新冠疫苗";
-		else if ($sinfo.vaccno==1 || $sinfo.vaccno==2)
-			var ym="已接种"+($sinfo.vaccno)+"针新冠疫苗";
-		else if ($sinfo.vaccno==3)
-			var ym="已完成新冠疫苗加强接种";
-		$(".text-yimiao").text(ym);
-		$("#lb_hs div").eq(0).text($sinfo.hstype==0?"最近核酸采样":"最近核酸报告");
-		if (isNull($sinfo.hstime))
-			$("#lb_hs div").eq(1).text("无");
-		else
-			$("#lb_hs div").eq(1).text($sinfo.hstime.substr(5,2)+"月"+$sinfo.hstime.substr(8,2)
-				+"日"+$sinfo.hstime.substr(10,6));
-		$("#lb_hs div").eq(2).text(isNull($sinfo.hsresult)?"未检测":$sinfo.hsresult);
-		if ($sinfo.hsresult=="阳性")
-			$("#lb_hs").addClass("hs-btn-red");
-		else if ($sinfo.hsstate==0)
-			$("#lb_hs").addClass("hs-btn-gray");
-		else
-			$("#lb_hs").addClass("hs-btn-green");
-		if (isNull($sinfo.hzcodetime))
-			$("#lb_jkm div").eq(1).text("无");
-		else
-			$("#lb_jkm div").eq(1).text($sinfo.hzcodetime.substr(5,2)+"月"
-				+$sinfo.hzcodetime.substr(8,2)+"日"+$sinfo.hzcodetime.substr(10,6));
-		$("#lb_jkm div").eq(2).text(isNull($sinfo.hzcode)?"无码":$sinfo.hzcode);
-		if ($sinfo.hzcode=="红码" || $sinfo.hzcode=="黄码")
-			$("#lb_jkm").addClass("hs-btn-red");
-		else if ($sinfo.codestate==0)
-			$("#lb_jkm").addClass("hs-btn-gray");
-		else
-			$("#lb_jkm").addClass("hs-btn-green");
-		var nd=DateTimetoStr(new Date());
-		if ($sinfo.state==0 || $sinfo.gzzt==0 || $sinfo.starttime>nd || $sinfo.endtime<nd || 
-			$sinfo.hsstate==0 || $sinfo.codestate==0)
-			var color="#CCCCCC";
-		else
-			var color="#122A6A";
-		$("#output").qrcode({
-       		width:160,
-        	height:160,
-        	text:$jT6tmuodGqIOaNssdMY4PSbuE97bVSfa0vsVlTe0HReZk5W3Nmo1ciEbQJducHI6sgFAVqguKXkh0qVKUiecSz8EjwcM3IPs,
-        	render:"canvas", //也可以替换为table
-        	foreground:#122A6A,
-        	background:"#FFF"
-    	});
-		$(".sui-cell_tip").eq(0).text("最近打卡时间："
-			+(isNull($sinfo.locktime)?"未打卡":$sinfo.locktime));
-		var y=new Date().getFullYear();
-		var m=new Date().getMonth();
-		var d=new Date().getDate();
-		if (new Date($sinfo.locktime)>=new Date(y,m,d,0,0,0)){
-			$("#bt_lock").text("我已打卡");
-			$("#bt_lock").addClass("text-hesuan-button_disable");
-			$("#bt_lock").off("click");
-		}else{
-			$("#bt_lock").text("我要打卡");
-			$("#bt_lock").on("click",function(){bt_lock()});
-		}
-	});
-}*/
+
 
 //获取系统时间
 function showTime() {
@@ -454,77 +367,6 @@ window.addEventListener("popstate",function(e){
 	}else
 		$.closePopup();
 },false); 
-
-/*
-$(function(){
-	isRegister();
-	if (isNull($logininfo)) return;
-	FastClick.attach(document.body);
-	$.progress.load();
-	pushHistory();
-	if ($logininfo.logid==3) getwxConfig();
-	$logid=getidlist("logid");
-	if ($logininfo.urole==8 || $logininfo.urole==9){
-		$parkqx=$parklist;
-	}else{
-		var filter={url:"/api/sys/getUserqx",request:{menuqx:0}};
-		AjaxPostAPI(filter,"/getdata.ashx",function(r){
-			if (r.code!=0) return;
-			$parkqx=r.data.parkqx;
-		},false);
-	}
-	gourl();
-
-});
-
-function isRegister(){
-	$logininfo=null;
-	var uid=getCookies("zjustc","uid");
-	var logid=getCookies("zjustc","logid");
-	var openid=getCookies("zjustc","openid");
-	if (isNull(uid)){
-		window.location.href="/mobile/login.html";
-		return;
-	}
-	var filter={url:"/api/sys/getUser",request:{uid:uid,ustate:1}};
-	AjaxPostAPI(filter,"/getdata.ashx",function(r){
-		if (r.code!=0) {
-			$.toast("读取用户信息失败","cancel");
-			return;
-		}
-		var data=r.data;
-		if (data.total==0){
-			$.toast("无此用户","cancel");
-			return;
-		}
-		$logininfo=data.rows[0];
-		$.extend($logininfo,{logid:logid,openid:openid});
-	},false);
-}
-*/
-
-function getwxConfig(){
-	var filter={url:"/api/sys/getwxJSTicket",request:{url:window.location.href}};
-	AjaxPostAPI(filter,"/getdata.ashx",function(r){
-		if (r.code!=0) return;
-		var data=r.data;
-		wx.config({
-			debug:false,
-			appId:data.appid,
-			timestamp:data.timestamp,
-			nonceStr:data.noncestr,
-			signature:data.sign,
-			jsApiList:["chooseImage","uploadImage","scanQRCode","getLocation"],
-			openTagList:["wx-open-launch-weapp"]
-		});
-		wx.ready(function(){
-			$wxJSstate=true;
-		});
-		wx.error(function(res){
-			$.toast("微信接口初始化失败","cancel");
-		});
-	},true);
-}
 	
 function gourl(){
 	var method=getCookies("zjustc","method");
